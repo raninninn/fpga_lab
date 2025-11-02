@@ -1,0 +1,8 @@
+0.7
+2020.2
+May 21 2025
+22:59:56
+/home/ran/Documents/uni/s9/fpga_lab/task_1/Task1.sim/sim_1/behav/xsim/glbl.v,1741209010,verilog,,,,glbl,,,,,,,,
+/home/ran/Documents/uni/s9/fpga_lab/task_1/Task1.srcs/sim_1/new/top_tb.v,1762024631,verilog,,,,top_tb,,,../../../../../../../../../bin/Xilinx/2025.1/data/rsb/busdef,,,,,
+/home/ran/Documents/uni/s9/fpga_lab/task_1/Task1.srcs/sources_1/imports/materials_t1/components.v,1741111950,verilog,,/home/ran/Documents/uni/s9/fpga_lab/task_1/Task1.srcs/sources_1/imports/materials_t1/top.v,,AND2;DFFNRX1;INVX1;NAND2;NOR2;OR2,,,../../../../../../../../../bin/Xilinx/2025.1/data/rsb/busdef,,,,,
+/home/ran/Documents/uni/s9/fpga_lab/task_1/Task1.srcs/sources_1/imports/materials_t1/top.v,1741799472,verilog,,/home/ran/Documents/uni/s9/fpga_lab/task_1/Task1.srcs/sim_1/new/top_tb.v,,blackbox0_W1;blackbox0_W13;blackbox0_W19_0;blackbox0_W19_1;blackbox0_W3;blackbox0_W8;blackbox1_W3_MAX6;blackbox2_ST_W3_IN0_W4_IN1_W4_IN2_W4_IN3_W8_OUT0_W5_OUT1_W8_OUT2_W4_OUT3_W4;blackbox3_IN_W4;blackbox3_s_IN0_W5_IN1_W8;blackbox4_ST_W3_IN0_W13_IN1_W19_OUT0_W19_OUT1_W13_CONST13;blackbox5_IN0_W19_IN1_W13_OUT_W19;top,,,../../../../../../../../../bin/Xilinx/2025.1/data/rsb/busdef,,,,,

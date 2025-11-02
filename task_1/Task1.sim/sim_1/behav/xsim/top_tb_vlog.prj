@@ -1,0 +1,11 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../../../../../../bin/Xilinx/2025.1/data/rsb/busdef" \
+"../../../../Task1.srcs/sources_1/imports/materials_t1/components.v" \
+"../../../../Task1.srcs/sources_1/imports/materials_t1/top.v" \
+"../../../../Task1.srcs/sim_1/new/top_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
