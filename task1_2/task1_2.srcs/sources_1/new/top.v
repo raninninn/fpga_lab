@@ -40,23 +40,19 @@ module top ( clk, rst, en, in0, in1, in2, done, out );
   reg signed [18:0] sum, next_sum;
   reg signed [18:0] mult0, mult1;
   reg [8:0] squared_input;
-  
+
+  assign done = ( state == S7 ) ? 'b1 : 'b0;
+  assign out = sum;
+
   always @( state, en ) begin: transition
     case ( state )
-      S0: if ( en ) next_state = S1;
-        else next_state = S0;
-      S1: if ( en ) next_state = S2;
-        else next_state = S0;
-      S2: if ( en ) next_state = S3;
-        else next_state = S0;
-      S3: if ( en ) next_state = S4;
-        else next_state = S0;
-      S4: if ( en ) next_state = S5;
-        else next_state = S0;
-      S5: if ( en ) next_state = S6;
-        else next_state = S0;
-      S6: next_state = S7;
-      default: next_state = S0;
+      S0: if ( en ) next_state <= S1;
+      S1: if ( en ) next_state <= S2;
+      S2: if ( en ) next_state <= S3;
+      S3: if ( en ) next_state <= S4;
+      S4: if ( en ) next_state <= S5;
+      S5: if ( en ) next_state <= S6;
+      S6: next_state <= S0;
     endcase
   end
 
@@ -64,39 +60,39 @@ module top ( clk, rst, en, in0, in1, in2, done, out );
     case ( state )
       S0:
       begin
-        next_sum = g;
-        mult0 = b * $signed(in0);
-        squared_input = in0 ** 2;
+        sum <= g;
+        mult0 <= b * $signed(in0);
+        squared_input <= in0 ** 2;
       end
       S1:
       begin
-        next_sum = sum + mult0;
-        mult1 = $signed(squared_input) * a;
+        sum <= sum + mult0;
+        mult1 <= $signed(squared_input) * a;
       end
       S2:
       begin
-        next_sum = sum + mult1;
-        mult0 = d * $signed(in1);
-        squared_input = in1 ** 2;
+        sum <= out + mult1;
+        mult0 <= d * $signed(in1);
+        squared_input <= in1 ** 2;
       end
       S3:
       begin
-        next_sum = sum + mult0;
-        mult1 = $signed(squared_input) * c; 
+        sum <= out + mult0;
+        mult1 <= $signed(squared_input) * c; 
       end
       S4:
       begin
-        next_sum = sum + mult1;
-        mult0 = f * $signed(in2);
-        squared_input = in2 ** 2;
+        sum <= out + mult1;
+        mult0 <= f * $signed(in2);
+        squared_input <= in2 ** 2;
       end
       S5:
       begin
-        next_sum = sum + mult0;
-        mult1 = $signed(squared_input) * e;
+        sum <= out + mult0;
+        mult1 <= $signed(squared_input) * e;
       end
       S6:
-        next_sum = sum + mult1;
+        sum <= out + mult1;
     endcase
   end
   
@@ -105,7 +101,6 @@ module top ( clk, rst, en, in0, in1, in2, done, out );
       state <= S0;
     end else begin
       state <= next_state;
-      sum <= next_sum;
     end
   end
   
@@ -113,9 +108,5 @@ module top ( clk, rst, en, in0, in1, in2, done, out );
     state = S0;
     next_state = S0;
     sum = 0;
-    next_sum = 0;
   end
-
-  assign done = ( state == S7 ) ? 'b1 : 'b0;
-  assign out = sum;
 endmodule
