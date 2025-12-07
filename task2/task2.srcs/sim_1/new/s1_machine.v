@@ -22,23 +22,9 @@
 
 module s1_machine
 (
-  input clk,
-  input rst,
   input timer,
   output [3:0] leds 
 );
   
-  reg [3:0] next_leds;
-
-  assign leds = next_leds;
-
-  always @( posedge clk ) begin
-    if ( !rst ) begin
-      next_leds <= 0;
-    end
-  end
-
-  always @( timer ) begin
-    next_leds <= ~leds;
-  end
+  assign leds = {4{timer}};
 endmodule
