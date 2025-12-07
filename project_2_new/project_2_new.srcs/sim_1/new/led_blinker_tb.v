@@ -1,11 +1,11 @@
-`timescale 1ns / 1ps
+`timescale 1ns / 1ns
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
 // Engineer: 
 // 
-// Create Date: 11/16/2025 03:37:40 PM
+// Create Date: 11/16/2025 01:50:56 PM
 // Design Name: 
-// Module Name: s1_machine_tb
+// Module Name: led_blinker_tb
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,30 +20,25 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module s1_machine_tb();
+module led_blinker_tb();
+  reg [1:0] state;
   wire [3:0] leds;
-  wire [24:0] counter;
-  reg [24:0] next_counter;
   reg clk, rst;
 
-  s1_machine s1_ut ( clk, rst, counter, leds );
-
-  assign counter = next_counter;
+  blinker led_blinker ( clk, state, leds );
 
   initial begin
     clk = 0;
-    next_counter = 0;
     forever begin
       #10 clk = ~clk;
     end
   end
 
-  always @( posedge clk ) begin
-    next_counter <= counter + 1;
-  end
-
   initial begin
-    #50 rst = 0;
-    #200 rst = 1;
+    state = 0;
+    #50 state = 1;
+    #4000000000 state = 2;
+    /*#4500000000 state = 3;
+    #5000000000 state = 0;*/
   end
 endmodule

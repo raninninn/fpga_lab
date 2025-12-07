@@ -23,7 +23,7 @@
 module s2_machine
 (
   input clk,
-  input rst,
+  input en,
   input timer,
   output [3:0] leds
 );
@@ -33,31 +33,41 @@ module s2_machine
     pattern_2 = 4'b0100,
     pattern_3 = 4'b1000;
 
-  reg [3:0] next_leds;
-  wire [1:0] current_pattern;
-  reg [1:0] next_pattern;
+  reg [3:0] next_leds = pattern_0;
+  reg [1:0] current_pattern = S0;
+  reg [1:0] next_pattern = S0;
 
-  assign current_pattern = next_pattern;
   assign leds = next_leds;
-
-  always @( posedge clk ) begin
-    if ( !rst ) begin
-      next_leds <= pattern_0;
-      next_pattern <= 1;
-    end
-  end
 
   always @( timer ) begin
     case ( current_pattern )
       S0:
+      begin
         next_leds <= pattern_0;
+        next_pattern <= S1;
+      end
       S1:
+      begin
         next_leds <= pattern_1;
+        next_pattern <= S2;
+      end
       S2:
+      begin
         next_leds <= pattern_2;
+        next_pattern <= S3;
+      end
       S3:
+      begin
         next_leds <= pattern_3;
+        next_pattern <= S0;
+      end
     endcase
-    next_pattern <= current_pattern + 1;
+  end
+  
+  always @( posedge clk ) begin
+    if ( en )
+      current_pattern <= next_pattern;
+    else if ( !en )
+      current_pattern <= S0;
   end
 endmodule

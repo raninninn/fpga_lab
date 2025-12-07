@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 11/16/2025 12:35:28 PM
+// Create Date: 11/15/2025 09:35:50 PM
 // Design Name: 
-// Module Name: pwm_tb
+// Module Name: top
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,23 +20,8 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module pwm_tb();
-  wire pwm_out;
-  reg clk, rst;
-
-  pwm pwm_ut ( clk, rst, pwm_out );
-  defparam pwm_ut.counter_width = 20;
-  defparam pwm_ut.compare_value_step_up = 12;
-
-  initial begin
-    clk = 0;
-    forever begin
-      #10 clk = ~clk;
-    end
-  end
-
-  initial begin
-    #50 rst = 0;
-    #200 rst = 1;
-  end
+module top(
+  input sysclk, input [1:0] sw, output [3:0] led
+);
+  blinker led_blinker( sysclk, sw, led );
 endmodule
