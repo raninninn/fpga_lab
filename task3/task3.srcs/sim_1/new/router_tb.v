@@ -39,12 +39,12 @@ initial begin
 end
 
 initial begin
-  #50
+/*  #50
   in0 <= 2;
   in1 <= 3;
   #50
   opcode <= 1;
-  in0 <= 4;
+  in0 <= 4; */
   #50
 /*  opcode <= 2;
   #50
@@ -59,7 +59,11 @@ initial begin
   in2 <= 3;
   opcode <= 6;
   #100*/
-  opcode <= 7;
+  in0 <= 1;
+  in1 <= 2;
+  in2 <= 0;
+  #20
+  opcode <= 0;
   #600;
 end
 endmodule
