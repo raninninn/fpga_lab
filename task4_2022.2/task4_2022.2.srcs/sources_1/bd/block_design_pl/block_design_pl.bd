@@ -1,0 +1,402 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x3EBDF3FAADD4AFC8",
+      "device": "xc7z020clg400-1",
+      "gen_directory": "../../../../task4_2022.2.gen/sources_1/bd/block_design_pl",
+      "name": "block_design_pl",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2022.2"
+    },
+    "design_tree": {
+      "status_report_0": "",
+      "input_interface_0": "",
+      "input_module_0": "",
+      "top_0": ""
+    },
+    "ports": {
+      "locked": {
+        "direction": "I"
+      },
+      "error": {
+        "direction": "I"
+      },
+      "correct_bits_count": {
+        "direction": "I",
+        "left": "3",
+        "right": "0"
+      },
+      "curr_seq": {
+        "direction": "O",
+        "left": "7",
+        "right": "0"
+      },
+      "new_seq_ready": {
+        "type": "intr",
+        "direction": "O"
+      },
+      "lock": {
+        "type": "intr",
+        "direction": "O"
+      },
+      "rst": {
+        "type": "rst",
+        "direction": "O"
+      },
+      "clk": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "FREQ_HZ": {
+            "value": "10000000"
+          }
+        }
+      },
+      "sw_0": {
+        "direction": "I",
+        "left": "1",
+        "right": "0"
+      },
+      "btn_0": {
+        "direction": "I",
+        "left": "1",
+        "right": "0"
+      },
+      "led_0": {
+        "direction": "O",
+        "left": "3",
+        "right": "0"
+      },
+      "led4_b_0": {
+        "direction": "O"
+      },
+      "led5_b_0": {
+        "direction": "O"
+      },
+      "led4_r_0": {
+        "direction": "O"
+      },
+      "int_ack": {
+        "direction": "I"
+      },
+      "led5_r_0": {
+        "direction": "O"
+      }
+    },
+    "components": {
+      "status_report_0": {
+        "vlnv": "xilinx.com:module_ref:status_report:1.0",
+        "xci_name": "block_design_pl_status_report_0_0",
+        "xci_path": "ip/block_design_pl_status_report_0_0_3/block_design_pl_status_report_0_0.xci",
+        "inst_hier_path": "status_report_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "status_report",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "led": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "led4_b": {
+            "direction": "O"
+          },
+          "led5_b": {
+            "direction": "O"
+          },
+          "led4_g": {
+            "direction": "O"
+          },
+          "led5_g": {
+            "direction": "O"
+          },
+          "led4_r": {
+            "direction": "O"
+          },
+          "led5_r": {
+            "direction": "O"
+          },
+          "correct_bits_count": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "error": {
+            "direction": "I"
+          },
+          "locked": {
+            "direction": "I"
+          },
+          "correct_guess": {
+            "direction": "I"
+          }
+        }
+      },
+      "input_interface_0": {
+        "vlnv": "xilinx.com:module_ref:input_interface:1.0",
+        "xci_name": "block_design_pl_input_interface_0_0",
+        "xci_path": "ip/block_design_pl_input_interface_0_0_3/block_design_pl_input_interface_0_0.xci",
+        "inst_hier_path": "input_interface_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "input_interface",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "sw": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "curr_bit": {
+            "direction": "O"
+          },
+          "set_bit": {
+            "direction": "O"
+          },
+          "btn": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "O"
+          },
+          "set": {
+            "direction": "O"
+          }
+        }
+      },
+      "input_module_0": {
+        "vlnv": "xilinx.com:module_ref:input_module:1.0",
+        "xci_name": "block_design_pl_input_module_0_0",
+        "xci_path": "ip/block_design_pl_input_module_0_0_3/block_design_pl_input_module_0_0.xci",
+        "inst_hier_path": "input_module_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "input_module",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "curr_bit": {
+            "direction": "I"
+          },
+          "set_bit": {
+            "direction": "I"
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              }
+            }
+          },
+          "output_bit": {
+            "direction": "O"
+          },
+          "output_valid": {
+            "direction": "O"
+          }
+        }
+      },
+      "top_0": {
+        "vlnv": "xilinx.com:module_ref:top:1.0",
+        "xci_name": "block_design_pl_top_0_0",
+        "xci_path": "ip/block_design_pl_top_0_0_3/block_design_pl_top_0_0.xci",
+        "inst_hier_path": "top_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "top",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "input_bit": {
+            "direction": "I"
+          },
+          "input_bit_valid": {
+            "direction": "I"
+          },
+          "correct_bits_count": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "set": {
+            "direction": "I"
+          },
+          "curr_seq": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "new_seq_ready": {
+            "direction": "O"
+          },
+          "lock": {
+            "direction": "O"
+          },
+          "int_ack": {
+            "direction": "I"
+          }
+        }
+      }
+    },
+    "nets": {
+      "Net": {
+        "ports": [
+          "clk",
+          "input_module_0/clk",
+          "top_0/clk"
+        ]
+      },
+      "Net1": {
+        "ports": [
+          "correct_bits_count",
+          "status_report_0/correct_bits_count",
+          "top_0/correct_bits_count"
+        ]
+      },
+      "btn_0_1": {
+        "ports": [
+          "btn_0",
+          "input_interface_0/btn"
+        ]
+      },
+      "error_1": {
+        "ports": [
+          "error",
+          "status_report_0/error"
+        ]
+      },
+      "input_interface_0_curr_bit": {
+        "ports": [
+          "input_interface_0/curr_bit",
+          "input_module_0/curr_bit"
+        ]
+      },
+      "input_interface_0_rst": {
+        "ports": [
+          "input_interface_0/rst",
+          "rst",
+          "input_module_0/rst",
+          "top_0/rst"
+        ]
+      },
+      "input_interface_0_set": {
+        "ports": [
+          "input_interface_0/set",
+          "top_0/set"
+        ]
+      },
+      "input_interface_0_set_bit": {
+        "ports": [
+          "input_interface_0/set_bit",
+          "input_module_0/set_bit"
+        ]
+      },
+      "input_module_0_output_bit": {
+        "ports": [
+          "input_module_0/output_bit",
+          "top_0/input_bit"
+        ]
+      },
+      "input_module_0_output_valid": {
+        "ports": [
+          "input_module_0/output_valid",
+          "top_0/input_bit_valid"
+        ]
+      },
+      "int_ack_1": {
+        "ports": [
+          "int_ack",
+          "top_0/int_ack"
+        ]
+      },
+      "locked_1": {
+        "ports": [
+          "locked",
+          "status_report_0/locked"
+        ]
+      },
+      "status_report_0_led": {
+        "ports": [
+          "status_report_0/led",
+          "led_0"
+        ]
+      },
+      "status_report_0_led4_b": {
+        "ports": [
+          "status_report_0/led4_b",
+          "led4_b_0"
+        ]
+      },
+      "status_report_0_led4_r": {
+        "ports": [
+          "status_report_0/led4_r",
+          "led4_r_0"
+        ]
+      },
+      "status_report_0_led5_b": {
+        "ports": [
+          "status_report_0/led5_b",
+          "led5_b_0"
+        ]
+      },
+      "status_report_0_led5_r": {
+        "ports": [
+          "status_report_0/led5_r",
+          "led5_r_0"
+        ]
+      },
+      "sw_0_1": {
+        "ports": [
+          "sw_0",
+          "input_interface_0/sw"
+        ]
+      },
+      "top_0_curr_seq": {
+        "ports": [
+          "top_0/curr_seq",
+          "curr_seq"
+        ]
+      },
+      "top_0_lock": {
+        "ports": [
+          "top_0/lock",
+          "lock"
+        ]
+      },
+      "top_0_new_seq_ready": {
+        "ports": [
+          "top_0/new_seq_ready",
+          "new_seq_ready"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.850909",
+   "Default View_TopLeft":"-267,-31",
+   "ExpandedHierarchyInLayout":"",
+   "HierExpandStatus_comment_0":"false",
+   "commentid":"",
+   "guistr":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:10.0 TLS
+#  -string -flagsOSRD
+preplace port port-id_locked -pg 1 -lvl 0 -x -20 -y 110 -defaultsOSRD
+preplace port port-id_error -pg 1 -lvl 0 -x -20 -y 170 -defaultsOSRD
+preplace port port-id_new_seq_ready -pg 1 -lvl 4 -x 970 -y 400 -defaultsOSRD
+preplace port port-id_lock -pg 1 -lvl 4 -x 970 -y 430 -defaultsOSRD
+preplace port port-id_rst -pg 1 -lvl 4 -x 970 -y 340 -defaultsOSRD
+preplace port port-id_clk -pg 1 -lvl 0 -x -20 -y 350 -defaultsOSRD
+preplace port port-id_led4_b_0 -pg 1 -lvl 4 -x 970 -y 40 -defaultsOSRD
+preplace port port-id_led5_b_0 -pg 1 -lvl 4 -x 970 -y 70 -defaultsOSRD
+preplace port port-id_led4_r_0 -pg 1 -lvl 4 -x 970 -y 100 -defaultsOSRD
+preplace port port-id_int_ack -pg 1 -lvl 0 -x -20 -y 470 -defaultsOSRD
+preplace port port-id_led5_r_0 -pg 1 -lvl 4 -x 970 -y 130 -defaultsOSRD
+preplace portBus correct_bits_count -pg 1 -lvl 0 -x -20 -y 140 -defaultsOSRD
+preplace portBus curr_seq -pg 1 -lvl 4 -x 970 -y 370 -defaultsOSRD
+preplace portBus sw_0 -pg 1 -lvl 0 -x -20 -y 240 -defaultsOSRD
+preplace portBus btn_0 -pg 1 -lvl 0 -x -20 -y 270 -defaultsOSRD
+preplace portBus led_0 -pg 1 -lvl 4 -x 970 -y 10 -defaultsOSRD
+preplace inst status_report_0 -pg 1 -lvl 3 -x 750 -y 90 -defaultsOSRD
+preplace inst input_interface_0 -pg 1 -lvl 1 -x 130 -y 260 -defaultsOSRD
+preplace inst input_module_0 -pg 1 -lvl 2 -x 400 -y 260 -defaultsOSRD
+preplace inst top_0 -pg 1 -lvl 3 -x 750 -y 400 -defaultsOSRD
+preplace netloc Net 1 0 3 N 350 250 350 530J
+preplace netloc Net1 1 0 3 N 140 N 140 540
+preplace netloc btn_0_1 1 0 1 N 270
+preplace netloc error_1 1 0 3 0J 80 NJ 80 N
+preplace netloc input_interface_0_curr_bit 1 1 1 N 230
+preplace netloc input_interface_0_rst 1 1 3 260 360 550 280 920
+preplace netloc input_interface_0_set 1 1 2 240 440 NJ
+preplace netloc input_interface_0_set_bit 1 1 1 N 250
+preplace netloc input_module_0_output_bit 1 2 1 560 250n
+preplace netloc input_module_0_output_valid 1 2 1 520 270n
+preplace netloc int_ack_1 1 0 3 NJ 470 NJ 470 540
+preplace netloc locked_1 1 0 3 10 100 NJ 100 NJ
+preplace netloc status_report_0_led 1 3 1 920 10n
+preplace netloc status_report_0_led4_b 1 3 1 920 40n
+preplace netloc status_report_0_led4_r 1 3 1 920 100n
+preplace netloc status_report_0_led5_b 1 3 1 N 70
+preplace netloc status_report_0_led5_r 1 3 1 930 130n
+preplace netloc sw_0_1 1 0 1 10 240n
+preplace netloc top_0_curr_seq 1 3 1 930 370n
+preplace netloc top_0_lock 1 3 1 920 420n
+preplace netloc top_0_new_seq_ready 1 3 1 N 400
+levelinfo -pg 1 -20 130 400 750 970
+pagesize -pg 1 -db -bbox -sgen -230 -30 1130 520
+"
+}
+0
