@@ -46,14 +46,13 @@ module top(
     if ( !rst ) begin
       new_seq_ready_reg <= next_new_seq_ready;
       lock_reg <= next_lock;
-      curr_seq <= next_seq; // {1'b1, int_ack, gone_reset, lock, /*next_lock,*/ gone_to_locking_state, gone_to_switch_state};
+      curr_seq <= next_seq;
     end else begin
       curr_seq <= 8'b0;
       {new_seq_ready_reg, lock_reg} <= 2'b0;
     end
   end
 
-  //always @( rst, set, input_bit_valid, int_ack ) begin
   always @( posedge clk ) begin
     if ( !rst ) begin
       case ( {set, input_bit_valid, int_ack} )
