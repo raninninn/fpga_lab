@@ -57,7 +57,10 @@ module top(
     if ( !rst ) begin
       case ( {set, input_bit_valid, int_ack} )
         3'b010: begin
-          next_seq[correct_bits_count] <= input_bit;
+          if ( correct_bits_count == 0 )
+            next_seq <= {7'b0, input_bit};
+          else
+            next_seq[correct_bits_count] <= input_bit;
           next_new_seq_ready <= 1;
           next_lock <= 0;
         end
